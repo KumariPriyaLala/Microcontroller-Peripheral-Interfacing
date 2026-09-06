@@ -1,0 +1,16 @@
+ORG 0000H
+HERE: MOV P2,#01H
+      ACALL DELAY
+      MOV P2,#00H
+      ACALL DELAY
+      SJMP HERE
+
+DELAY: MOV R1,#2
+H3:    MOV R2,#250
+H2:    MOV R3,#250
+H1:    DJNZ R3,H1
+       DJNZ R2,H2
+       DJNZ R1,H3
+       RET
+
+END
